@@ -1,6 +1,6 @@
 project_path: .
 ddconfig_path: configs/ddconfigs/rainfall.json
-model_path: models/sequifier-default-mse-best-1000.onnx
+model_path: models/sequifier-default-mse-best-924.onnx
 data_path: data/rainfall-split2.parquet
 
 selected_columns: ["Specific Humidity", "Relative Humidity", "Temperature", "Precipitation"]
