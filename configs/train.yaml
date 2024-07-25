@@ -1,12 +1,12 @@
 project_path: .
-model_name: default
+model_name: default-mse
 read_format: parquet
-ddconfig_path: PLEASE FILL
+ddconfig_path: configs/ddconfigs/rainfall.json
 
-selected_columns: null
-target_columns: [itemValue]
+selected_columns: ["Precipitation"]
+target_columns: ["Precipitation"]
 target_column_types:
-  itemValue: real
+  Precipitation: real
 
 seq_length: 8
 inference_batch_size: 10
@@ -14,25 +14,25 @@ inference_batch_size: 10
 export_onnx: true
 
 model_spec:
-  d_model: 10
-  nhead: 2
-  d_hid: 10
-  nlayers: 2
+  d_model: 64
+  nhead: 4
+  d_hid: 64
+  nlayers: 4
 training_spec:
   device: cpu
-  epochs: 3
-  iter_save: 1
+  epochs: 5000
+  iter_save: 10000
   batch_size: 20
-  log_interval: 200
-  lr: 0.003
-  accumulation_steps: null
-  dropout: 0.3
+  log_interval: 10000
+  lr: 0.0008
+  accumulation_steps: 1
+  dropout: 0.2
   criterion:
-    itemValue: MSELoss
+    Precipitation: MSELoss
   optimizer:
-    name: Adam
+    name: AdamW
   scheduler:
     name: StepLR
-    step_size: 1.0
+    step_size: 250
     gamma: 0.99
   continue_training: false

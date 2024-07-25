@@ -1,12 +1,12 @@
 project_path: .
-ddconfig_path: PLEASE FILL
-model_path: PLEASE FILL
-data_path: PLEASE FILL
+ddconfig_path: configs/ddconfigs/rainfall.json
+model_path: models/sequifier-default-mse-best-5000.onnx
+data_path: data/rainfall-split2.parquet
 
-selected_columns: null
-target_columns: [itemValue]
+selected_columns: ["Precipitation"]
+target_columns: [Precipitation]
 target_column_types:
-  itemValue: real
+  Precipitation: real
 
 output_probabilities: false
 map_to_id: false
