@@ -20,9 +20,9 @@ model_spec:
   nlayers: 4
 training_spec:
   device: cpu
-  epochs: 5000
-  iter_save: 10000
-  batch_size: 20
+  epochs: 1000
+  iter_save: 1000
+  batch_size: 100
   log_interval: 10000
   lr: 0.0008
   accumulation_steps: 1
@@ -33,6 +33,6 @@ training_spec:
     name: AdamW
   scheduler:
     name: StepLR
-    step_size: 250
+    step_size: 100
     gamma: 0.99
   continue_training: false
