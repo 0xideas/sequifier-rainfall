@@ -3,12 +3,12 @@ model_name: default-mse
 read_format: parquet
 ddconfig_path: configs/ddconfigs/rainfall.json
 
-selected_columns: ["Precipitation"]
+selected_columns: ["Specific Humidity", "Relative Humidity", "Temperature", "Precipitation"]
 target_columns: ["Precipitation"]
 target_column_types:
   Precipitation: real
 
-seq_length: 8
+seq_length: 12
 inference_batch_size: 10
 
 export_onnx: true

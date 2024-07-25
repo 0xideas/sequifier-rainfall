@@ -1,9 +1,9 @@
 project_path: .
 ddconfig_path: configs/ddconfigs/rainfall.json
 model_path: models/sequifier-default-mse-best-1000.onnx
-data_path: data/rainfall-split0.parquet
+data_path: data/rainfall-split2.parquet
 
-selected_columns: ["Precipitation"]
+selected_columns: ["Specific Humidity", "Relative Humidity", "Temperature", "Precipitation"]
 target_columns: [Precipitation]
 target_column_types:
   Precipitation: real
@@ -11,7 +11,7 @@ target_column_types:
 output_probabilities: false
 map_to_id: false
 device: cpu
-seq_length: 8
+seq_length: 12
 inference_batch_size: 10
 
 autoregression: false
